@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyInstagram2.Pages.PostPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="ImageSrc" Aspect="AspectFill" HeightRequest="300"/>
+
+            <Entry x:Name="Caption" Text="{Binding Captions}" HeightRequest="60"/>
+
+            <Button Clicked="OnButtonClicked" Text="Post"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

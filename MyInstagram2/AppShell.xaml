@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:page ="clr-namespace:MyInstagram2.Pages"
+             x:Class="MyInstagram2.AppShell">
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate page:HomePage}" />
+        </Tab>
+        <Tab Title="Nontification">
+            <ShellContent ContentTemplate="{DataTemplate page:NontificationPage}" />
+        </Tab>
+        <Tab Title="Search">
+            <ShellContent ContentTemplate="{DataTemplate page:SearchPage}" />
+        </Tab>
+        <Tab Title="Me">
+            <ShellContent ContentTemplate="{DataTemplate page:ProfilePage}" />
+        </Tab>
+    </TabBar>
+</Shell>

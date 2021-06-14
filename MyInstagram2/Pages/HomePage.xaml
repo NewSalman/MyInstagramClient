@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyInstagram2.Pages.HomePage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Post" Command="{Binding ToPostPage}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsRefreshing, Mode=OneWay}" Command="{Binding RefreshCommand}">
+            <StackLayout Orientation="Vertical">
+                <CollectionView ItemsSource="{Binding Post}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical" Padding="0,0,0,10">
+                                <Label IsVisible="false" Text="{Binding ID}"/>
+
+                                <Frame Margin="0">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Username}"  FontSize="Medium"/>
+
+                                        <Label Text="{Binding PostedAt}" FontSize="Micro"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Image Source="{Binding FileSource}" Aspect="AspectFill" HeightRequest="300" />
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Username}" FontSize="17" Padding="10,7,0,0"/>
+                                    <Label Text="{Binding Caption}" FontSize="14" Padding="0,10,0,0"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyInstagram2.Pages.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding ProfilePicture}" HeightRequest="100" WidthRequest="50" Grid.Row="0" Grid.Column="0"/>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                        <Label Text="{Binding Username}" FontSize="Medium"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <CollectionView ItemsSource="{Binding ProfilePost}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="3" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label IsVisible="false" Text="{Binding ID}"/>
+                            <Image Source="{Binding FileSource}" Aspect="AspectFill" HeightRequest="140" WidthRequest="70"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
